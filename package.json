@@ -1,0 +1,18 @@
+{
+  "name": "simple-webapp-mvp",
+  "version": "1.0.0",
+  "description": "Simple task web application MVP",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "test": "node --test",
+    "lint": "node --check backend/src/app.js backend/src/server.js backend/src/taskStore.js frontend/script.js frontend/taskUtils.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.1"
+  }
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Board MVP</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Task Board</h1>
+        <p>Simple CRUD web app MVP</p>
+      </header>
+
+      <section class="card">
+        <form id="taskForm" class="grid">
+          <input id="title" name="title" type="text" placeholder="Task title" minlength="2" maxlength="120" required />
+          <input id="description" name="description" type="text" placeholder="Description (optional)" maxlength="300" />
+          <button type="submit">Add Task</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="toolbar">
+          <input id="search" type="text" placeholder="Search tasks..." />
+          <select id="filterStatus">
+            <option value="">All</option>
+            <option value="true">Completed</option>
+            <option value="false">Active</option>
+          </select>
+          <button id="refreshBtn" type="button">Refresh</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <ul id="taskList" class="task-list"></ul>
+        <p id="emptyState" class="muted">No tasks yet.</p>
+      </section>
+    </main>
+
+    <template id="taskItemTemplate">
+      <li class="task-item">
+        <label class="row">
+          <input class="toggle-complete" type="checkbox" />
+          <span class="task-title"></span>
+        </label>
+        <p class="task-description muted"></p>
+        <div class="actions">
+          <button class="edit-btn" type="button">Edit</button>
+          <button class="delete-btn danger" type="button">Delete</button>
+        </div>
+      </li>
+    </template>
+
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
